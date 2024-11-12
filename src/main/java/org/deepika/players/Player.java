@@ -46,4 +46,16 @@ public class Player {
     public void setAttack(int attack) {
         this.attack = attack;
     }
+
+    public void reduceHealth(int damage) {
+        // Ensure health does not drop below 0
+        if (damage > 0) {
+            health = Math.max(health - damage, 0);  // Reduce health and ensure it doesn't go below 0
+        }
+    }
+
+    // Method to check if the player is alive (health greater than zero).
+    public boolean isAlive() {
+        return health > 0;
+    }
 }
